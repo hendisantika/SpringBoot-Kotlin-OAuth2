@@ -8,7 +8,7 @@ server:
 
 spring:
   datasource:
-    url: jdbc:mysql://localhost:3306/Kotlin_OAuth2?createDatabaseIfNotExist&autoReconnect=true&useUnicode=true&characterEncoding=UTF-8&allowMultiQueries=true&useSSL=false&useLegacyDatetimeCode=false&serverTimezone=UTC
+    url: jdbc:mysql://localhost:3306/Kotlin_OAuth2?createDatabaseIfNotExist=true&autoReconnect=true&useUnicode=true&characterEncoding=UTF-8&allowMultiQueries=true&useSSL=false&useLegacyDatetimeCode=false&serverTimezone=UTC
     username: root
     password: root
     type: org.apache.tomcat.jdbc.pool.DataSource
@@ -27,3 +27,5 @@ spring:
         format_sql: true
         id:
           new_generator_mappings: false
+    generate-ddl: true
+    show-sql: true
