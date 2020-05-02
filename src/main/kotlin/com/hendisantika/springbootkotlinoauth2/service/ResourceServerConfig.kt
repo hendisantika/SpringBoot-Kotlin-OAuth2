@@ -1,7 +1,9 @@
 package com.hendisantika.springbootkotlinoauth2.service
 
+import org.springframework.boot.web.servlet.FilterRegistrationBean
 import org.springframework.context.annotation.Bean
 import org.springframework.context.annotation.Configuration
+import org.springframework.core.Ordered
 import org.springframework.security.config.annotation.web.builders.HttpSecurity
 import org.springframework.security.oauth2.config.annotation.web.configuration.EnableResourceServer
 import org.springframework.security.oauth2.config.annotation.web.configuration.ResourceServerConfigurerAdapter
@@ -10,6 +12,7 @@ import org.springframework.security.oauth2.provider.error.OAuth2AccessDeniedHand
 import org.springframework.web.cors.CorsConfiguration
 import org.springframework.web.cors.CorsConfigurationSource
 import org.springframework.web.cors.UrlBasedCorsConfigurationSource
+import org.springframework.web.filter.CorsFilter
 
 /**
  * Created by IntelliJ IDEA.
@@ -47,5 +50,17 @@ class ResourceServerConfig : ResourceServerConfigurerAdapter() {
         val source = UrlBasedCorsConfigurationSource()
         source.registerCorsConfiguration("/**", config)
         return source
+    }
+
+    @Bean
+    fun corsFilter(): FilterRegistrationBean<CorsFilter>? {
+        val bean: FilterRegistrationBean<CorsFilter> = FilterRegistrationBean<CorsFilter>(
+                corsConfigurationSource()?.let { CorsFilter(it) })
+        bean.order = Ordered.HIGHEST_PRECEDENCE
+        return bean
+    }
+
+    companion object {
+        private const val RESOURCE_ID = "resource_id"
     }
 }
