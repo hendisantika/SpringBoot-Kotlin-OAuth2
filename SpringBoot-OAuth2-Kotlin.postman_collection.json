@@ -1,0 +1,190 @@
+{
+  "info": {
+    "_postman_id": "f5939180-6315-4aec-ae6d-de4fd8cd55de",
+    "name": "SpringBoot-OAuth2-Kotlin",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+  },
+  "item": [
+    {
+      "name": "Get Token",
+      "request": {
+        "auth": {
+          "type": "basic",
+          "basic": [
+            {
+              "key": "password",
+              "value": "naruto-secret",
+              "type": "string"
+            },
+            {
+              "key": "username",
+              "value": "naruto-client",
+              "type": "string"
+            }
+          ]
+        },
+        "method": "POST",
+        "header": [],
+        "body": {
+          "mode": "formdata",
+          "formdata": [
+            {
+              "key": "username",
+              "value": "naruto",
+              "type": "text"
+            },
+            {
+              "key": "password",
+              "value": "naruto",
+              "type": "text"
+            },
+            {
+              "key": "grant_type",
+              "value": "password",
+              "type": "text"
+            }
+          ],
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "http://localhost:8080/backend/oauth/token",
+          "protocol": "http",
+          "host": [
+            "localhost"
+          ],
+          "port": "8080",
+          "path": [
+            "backend",
+            "oauth",
+            "token"
+          ]
+        },
+        "description": "Get Token"
+      },
+      "response": []
+    },
+    {
+      "name": "Get Users with No Token",
+      "protocolProfileBehavior": {
+        "disableBodyPruning": true
+      },
+      "request": {
+        "auth": {
+          "type": "noauth"
+        },
+        "method": "GET",
+        "header": [],
+        "body": {
+          "mode": "formdata",
+          "formdata": [
+            {
+              "key": "username",
+              "value": "naruto",
+              "type": "text",
+              "disabled": true
+            },
+            {
+              "key": "password",
+              "value": "naruto",
+              "type": "text",
+              "disabled": true
+            },
+            {
+              "key": "grant_type",
+              "value": "password",
+              "type": "text",
+              "disabled": true
+            }
+          ],
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "http://localhost:8080/backend/api/users",
+          "protocol": "http",
+          "host": [
+            "localhost"
+          ],
+          "port": "8080",
+          "path": [
+            "backend",
+            "api",
+            "users"
+          ]
+        },
+        "description": "Get Users with No Token"
+      },
+      "response": []
+    },
+    {
+      "name": "Get Users with Token",
+      "protocolProfileBehavior": {
+        "disableBodyPruning": true
+      },
+      "request": {
+        "auth": {
+          "type": "noauth"
+        },
+        "method": "GET",
+        "header": [],
+        "body": {
+          "mode": "formdata",
+          "formdata": [
+            {
+              "key": "username",
+              "value": "naruto",
+              "type": "text",
+              "disabled": true
+            },
+            {
+              "key": "password",
+              "value": "naruto",
+              "type": "text",
+              "disabled": true
+            },
+            {
+              "key": "grant_type",
+              "value": "password",
+              "type": "text",
+              "disabled": true
+            }
+          ],
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "http://localhost:8080/backend/api/users?access_token=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJleHAiOjE1ODgzODQ0MTIsInVzZXJfbmFtZSI6Im5hcnV0byIsImF1dGhvcml0aWVzIjpbIlJPTEVfQURNSU4iXSwianRpIjoiNmZjOTRjNDMtYzg4OS00ZTM1LWEzMTEtZjIyYjM5ZmFjMzg3IiwiY2xpZW50X2lkIjoibmFydXRvLWNsaWVudCIsInNjb3BlIjpbInJlYWQiLCJ3cml0ZSIsInRydXN0Il19.V2enoyHJhleP0qtALe7tafegQCOCln3LWR7wPqIHOqY",
+          "protocol": "http",
+          "host": [
+            "localhost"
+          ],
+          "port": "8080",
+          "path": [
+            "backend",
+            "api",
+            "users"
+          ],
+          "query": [
+            {
+              "key": "access_token",
+              "value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJleHAiOjE1ODgzODQ0MTIsInVzZXJfbmFtZSI6Im5hcnV0byIsImF1dGhvcml0aWVzIjpbIlJPTEVfQURNSU4iXSwianRpIjoiNmZjOTRjNDMtYzg4OS00ZTM1LWEzMTEtZjIyYjM5ZmFjMzg3IiwiY2xpZW50X2lkIjoibmFydXRvLWNsaWVudCIsInNjb3BlIjpbInJlYWQiLCJ3cml0ZSIsInRydXN0Il19.V2enoyHJhleP0qtALe7tafegQCOCln3LWR7wPqIHOqY"
+            }
+          ]
+        },
+        "description": "Get Users with Token"
+      },
+      "response": []
+    }
+  ],
+  "protocolProfileBehavior": {}
+}
