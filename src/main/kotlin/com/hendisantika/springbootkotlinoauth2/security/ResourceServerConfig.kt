@@ -1,4 +1,4 @@
-package com.hendisantika.springbootkotlinoauth2.service
+package com.hendisantika.springbootkotlinoauth2.security
 
 import org.springframework.boot.web.servlet.FilterRegistrationBean
 import org.springframework.context.annotation.Bean
