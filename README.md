@@ -12,3 +12,19 @@
    Password is using BCrypt: `naruto`
 4. Run the application: `gradle clean bootRun --info`
 5. Open POSTMAN to test API
+
+### Screen shot
+
+Get Token
+
+![Get Token](img/get-token1.png "Get Token")
+
+![Get Token](img/get-token2.png "Get Token")
+
+Access Without Token
+
+![Access Without Token](img/access-without-token.png "Access Without Token")
+
+Access With Token
+
+![Access With Token](img/access-with-token.png "Access With Token")
