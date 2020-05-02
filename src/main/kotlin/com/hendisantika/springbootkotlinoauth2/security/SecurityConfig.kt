@@ -1,6 +1,8 @@
 package com.hendisantika.springbootkotlinoauth2.security
 
+import org.springframework.context.annotation.Bean
 import org.springframework.context.annotation.Configuration
+import org.springframework.security.authentication.AuthenticationManager
 import org.springframework.security.config.annotation.method.configuration.EnableGlobalMethodSecurity
 import org.springframework.security.config.annotation.web.configuration.EnableWebSecurity
 import org.springframework.security.config.annotation.web.configuration.WebSecurityConfigurerAdapter
@@ -23,4 +25,9 @@ class SecurityConfig : WebSecurityConfigurerAdapter() {
     @Resource(name = "userService")
     private val userDetailsService: UserDetailsService? = null
 
+    @Bean
+    @Throws(Exception::class)
+    override fun authenticationManagerBean(): AuthenticationManager {
+        return super.authenticationManagerBean()
+    }
 }
