@@ -34,7 +34,7 @@ class ResourceServerConfig : ResourceServerConfigurerAdapter() {
     override fun configure(http: HttpSecurity) {
         http.anonymous().disable()
                 .authorizeRequests()
-                .antMatchers("/ws/**").access("hasRole('ADMIN')")
+                .antMatchers("/api/**").access("hasRole('ADMIN')")
                 .and().cors()
                 .configurationSource(corsConfigurationSource())
                 .and().exceptionHandling().accessDeniedHandler(OAuth2AccessDeniedHandler())
