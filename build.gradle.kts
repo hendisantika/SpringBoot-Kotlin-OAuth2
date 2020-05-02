@@ -29,6 +29,8 @@ dependencies {
     implementation("org.springframework.boot:spring-boot-starter-web")
     implementation("org.springframework.security:spring-security-jwt:1.0.9.RELEASE")
     implementation("com.fasterxml.jackson.module:jackson-module-kotlin")
+    implementation("org.apache.tomcat:tomcat-jdbc")
+    implementation("org.apache.tomcat.embed:tomcat-embed-jasper")
     implementation("org.jetbrains.kotlin:kotlin-reflect")
     implementation("org.jetbrains.kotlin:kotlin-stdlib-jdk8")
     developmentOnly("org.springframework.boot:spring-boot-devtools")
