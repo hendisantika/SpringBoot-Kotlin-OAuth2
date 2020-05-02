@@ -48,8 +48,8 @@ class AuthorizationServerConfig : AuthorizationServerConfigurerAdapter() {
     override fun configure(configurer: ClientDetailsServiceConfigurer) {
         configurer
                 .inMemory()
-                .withClient("henry-client")
-                .secret(passwordEncoder?.encode("henry-secret"))
+                .withClient("naruto-client")
+                .secret(passwordEncoder?.encode("naruto-secret"))
                 .authorizedGrantTypes("password", "authorization_code", "refresh_token", "implicit")
                 .scopes("read", "write", "trust")
                 .accessTokenValiditySeconds(3600)

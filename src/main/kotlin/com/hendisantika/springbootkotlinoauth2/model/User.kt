@@ -1,10 +1,9 @@
 package com.hendisantika.springbootkotlinoauth2.model
 
+import org.hibernate.annotations.CreationTimestamp
 import java.io.Serializable
 import java.sql.Timestamp
-import javax.persistence.Entity
-import javax.persistence.Id
-import javax.persistence.Table
+import javax.persistence.*
 
 /**
  * Created by IntelliJ IDEA.
@@ -19,9 +18,13 @@ import javax.persistence.Table
 @Table(name = "users")
 class User : Serializable {
     @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     var id = 0
     var username: String? = null
     var password: String? = null
+
+    @Column(columnDefinition = "TIMESTAMP DEFAULT CURRENT_TIMESTAMP() on  UPDATE CURRENT_TIMESTAMP()")
+    @CreationTimestamp
     var created: Timestamp? = null
 
 }
